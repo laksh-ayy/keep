@@ -1,11 +1,11 @@
-import { AuthCredentialsDto } from "../dto/auth-credentials.dto";
-import { AccessTokenDto } from "../dto/accessToken.dto";
+import { IAuthCredentials } from "../dto/auth-credentials.interfcae";
+import { IAccessToken } from "../dto/accessToken.interface";
 import { loginEndPoint, registerEndPoint } from "../endpoints";
 import { IAuthService } from "../dto/authService.interface";
 import axios from "axios";
 
 export class AuthService implements IAuthService {
-  async register(authCredentialsDto: AuthCredentialsDto): Promise<void> {
+  async register(authCredentialsDto: IAuthCredentials): Promise<void> {
     const { username, password } = authCredentialsDto;
     try {
       await axios({
@@ -26,8 +26,8 @@ export class AuthService implements IAuthService {
   }
 
   async login(
-    authCredentialsDto: AuthCredentialsDto
-  ): Promise<AccessTokenDto | undefined> {
+    authCredentialsDto: IAuthCredentials
+  ): Promise<IAccessToken | undefined> {
     const { username, password } = authCredentialsDto;
     try {
       const res = await axios({

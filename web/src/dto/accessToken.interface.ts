@@ -1,3 +1,3 @@
-export interface AccessTokenDto {
+export interface IAccessToken {
   accesstoken: string | undefined;
 }

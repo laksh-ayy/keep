@@ -1,10 +1,10 @@
-import { NoteDto, CreateNoteDto } from "../dto/note.dto";
+import { INote, ICreateNote } from "../dto/note.interface";
 import axios from "axios";
 import { labelEndpoint, noteEndpoint, searchEndpoint } from "../endpoints";
 
 export class NoteService {
   public token = localStorage.getItem("token");
-  async getAllNotes(): Promise<NoteDto[]> {
+  async getAllNotes(): Promise<INote[]> {
     try {
       const res = await axios({
         method: "get",
@@ -34,7 +34,7 @@ export class NoteService {
     }
   }
 
-  async getNoteById(id: string): Promise<NoteDto> {
+  async getNoteById(id: string): Promise<INote> {
     try {
       const res = await axios({
         method: "get",
@@ -49,7 +49,7 @@ export class NoteService {
     }
   }
 
-  async getNotesByLabel(label: string): Promise<NoteDto[]> {
+  async getNotesByLabel(label: string): Promise<INote[]> {
     try {
       const res = await axios({
         method: "get",
@@ -65,7 +65,7 @@ export class NoteService {
     }
   }
 
-  async searchNote(search: string): Promise<NoteDto[]> {
+  async searchNote(search: string): Promise<INote[]> {
     try {
       const res = await axios({
         method: "get",
@@ -81,9 +81,9 @@ export class NoteService {
     }
   }
 
-  async createNote(noteDto: CreateNoteDto): Promise<NoteDto> {
+  async createNote(INote: ICreateNote): Promise<INote> {
     try {
-      const { title, body, label } = noteDto;
+      const { title, body, label } = INote;
       const res = await axios({
         method: "post",
         url: noteEndpoint,
@@ -103,7 +103,7 @@ export class NoteService {
     }
   }
 
-  async deleteNote(id: string): Promise<NoteDto> {
+  async deleteNote(id: string): Promise<INote> {
     try {
       const res = await axios({
         method: "delete",
@@ -119,9 +119,9 @@ export class NoteService {
     }
   }
 
-  async updateNote(noteDto: NoteDto): Promise<NoteDto> {
+  async updateNote(INote: INote): Promise<INote> {
     try {
-      const { id, title, body, label } = noteDto;
+      const { id, title, body, label } = INote;
       const res = await axios({
         method: "put",
         url: `${noteEndpoint}/${id}`,

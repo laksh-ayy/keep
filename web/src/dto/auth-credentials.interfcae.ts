@@ -1,4 +1,4 @@
-export class AuthCredentialsDto {
+export interface IAuthCredentials {
   username: string | undefined;
   password: string | undefined;
 }

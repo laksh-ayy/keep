@@ -4,3 +4,9 @@ export interface INote {
   body?: string;
   label?: string;
 }
+
+export interface ICreateNote {
+  title: string | undefined;
+  body: string | undefined;
+  label: string | undefined;
+}

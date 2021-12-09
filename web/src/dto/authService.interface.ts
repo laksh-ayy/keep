@@ -1,8 +1,8 @@
-import { AccessTokenDto } from "./accessToken.dto";
-import { AuthCredentialsDto } from "./auth-credentials.dto";
+import { IAccessToken } from "./accessToken.interface";
+import { IAuthCredentials } from "./auth-credentials.interfcae";
 export interface IAuthService {
-  register(authCredentialsDto: AuthCredentialsDto): Promise<void>;
+  register(authCredentialsDto: IAuthCredentials): Promise<void>;
   login(
-    authCredentialsDto: AuthCredentialsDto
-  ): Promise<AccessTokenDto | undefined>;
+    authCredentialsDto: IAuthCredentials
+  ): Promise<IAccessToken | undefined>;
 }
