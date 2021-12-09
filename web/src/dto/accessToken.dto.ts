@@ -1,3 +1,3 @@
-export class AccessTokenDto {
+export interface AccessTokenDto {
   accesstoken: string | undefined;
 }

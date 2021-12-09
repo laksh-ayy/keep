@@ -3,8 +3,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -19,7 +17,7 @@ import { toast } from "react-toastify";
 const theme = createTheme();
 
 export default function SignIn() {
-  const { store, setStore } = React.useContext(StoreContext);
+  const { setStore } = React.useContext(StoreContext);
   const history = useHistory();
   const authService = new AuthService();
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {

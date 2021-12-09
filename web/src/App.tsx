@@ -13,7 +13,7 @@ const App: React.FC = () => {
     } else {
       setStore(false);
     }
-  }, [localStorage]);
+  }, []);
   return (
     <div className="App">
       <MuiThemeProvider>

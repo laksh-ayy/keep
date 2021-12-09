@@ -28,7 +28,7 @@ export default function SignUp() {
       password: data.get("password"),
     });
     try {
-      const res = await authService.register({
+      await authService.register({
         username: String(data.get("email")),
         password: String(data.get("password")),
       });

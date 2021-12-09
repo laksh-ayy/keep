@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Box,
-  Button,
   Card,
   CardActionArea,
   CardContent,
@@ -9,7 +8,6 @@ import {
   Grid,
   Modal,
   styled,
-  TextField,
   Typography,
 } from "@mui/material";
 import { INote } from "../dto/note.interface";
@@ -28,7 +26,7 @@ interface ICreateNote {
   label?: string;
 }
 
-export const Note = styled(Card)(({}) => ({
+export const Note = styled(Card)(() => ({
   border: "1px solid #e0e0e0",
   boxShadow: "none",
   marginBottom: 16,
@@ -36,7 +34,7 @@ export const Note = styled(Card)(({}) => ({
   maxHeight: 220,
 }));
 
-const Buttons = styled("div")(({}) => ({
+const Buttons = styled("div")(() => ({
   display: "inline-flex",
   marginLeft: "69%",
   alignItems: "center",
@@ -69,6 +67,16 @@ export const style2 = {
   boxShadow: 24,
   p: 4,
 };
+
+export const ClickableIcons = styled("button")(() => ({
+  backgroundColor: "transparent",
+  border: "none",
+  cursor: "pointer",
+  textDecoration: "underline",
+  display: "inline",
+  margin: 0,
+  padding: 0,
+}));
 
 const TextBox: React.FC<INote> = ({ id, title, body, label }) => {
   const [open, setOpen] = React.useState(false);
@@ -160,12 +168,12 @@ const TextBox: React.FC<INote> = ({ id, title, body, label }) => {
               <Chip label={label} variant="outlined" sx={{ mb: 1.5 }} />
             )}
             <Buttons>
-              <a onClick={handleOpen2}>
+              <ClickableIcons onClick={handleOpen2}>
                 <EditIcon sx={{ cursor: "pointer" }} />
-              </a>
-              <a onClick={handleDelete}>
+              </ClickableIcons>
+              <ClickableIcons onClick={handleDelete}>
                 <DeleteIcon sx={{ ml: 2.5, cursor: "pointer" }} />
-              </a>
+              </ClickableIcons>
             </Buttons>
             <Modal
               open={open2}

@@ -1,6 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
-import { Box, Container, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 const NotFound = () => (
   <>

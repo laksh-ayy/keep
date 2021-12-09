@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Box, Button, Modal, styled, TextField } from "@mui/material";
+import { Box, Modal, styled, TextField } from "@mui/material";
 import { style2 } from "./TextBox";
 import { NoteService } from "../services/NoteService";
 import { YellowButton } from "./Navigation";
 import { color } from "../theme/color";
 import { toast } from "react-toastify";
 
-const CreateNote = styled("button")(({}) => ({
+const CreateNote = styled("button")(() => ({
   border: "0.2px solid #00000000",
   borderRadius: "5px",
   backgroundColor: "#fff",
@@ -25,7 +25,7 @@ const CreateNote = styled("button")(({}) => ({
   transform: "translate(-50%, -50%)",
 }));
 
-export const NoteInputField = styled(TextField)(({}) => ({
+export const NoteInputField = styled(TextField)(() => ({
   "& .MuiOutlinedInput-root": {
     "&.Mui-focused fieldset": {
       borderColor: color.yellow_l,

@@ -8,7 +8,7 @@ export class AuthService implements IAuthService {
   async register(authCredentialsDto: AuthCredentialsDto): Promise<void> {
     const { username, password } = authCredentialsDto;
     try {
-      const res = await axios({
+      await axios({
         method: "post",
         url: registerEndPoint,
         headers: {

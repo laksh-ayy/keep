@@ -31,12 +31,12 @@ const openedMixin = (theme: Theme): CSSObject => ({
   overflowX: "hidden",
 });
 
-const Label = styled(LabelIcon)(({}) => ({
+const Label = styled(LabelIcon)(() => ({
   color: color.yellow_l,
   marginRight: 25,
 }));
 
-const Home = styled(HomeIcon)(({}) => ({
+const Home = styled(HomeIcon)(() => ({
   color: color.yellow_l,
   marginRight: 25,
 }));
@@ -101,27 +101,27 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-const Img = styled("img")(({}) => ({
+const Img = styled("img")(() => ({
   position: "relative",
   marginRight: "10px",
   height: "40px",
   width: "40px",
 }));
 
-const Nav = styled(AppBar)(({}) => ({
+const Nav = styled(AppBar)(() => ({
   backgroundColor: "#fff",
   color: "#000",
   boxShadow: "none",
   borderBottom: "1px solid #e0e0e0",
 }));
 
-export const YellowButton = styled(Button)(({}) => ({
+export const YellowButton = styled(Button)(() => ({
   backgroundColor: color.yellow_l,
   color: color.black,
   // marginLeft: "9%",
 }));
 
-const Search = styled(TextField)(({}) => ({
+const Search = styled(TextField)(() => ({
   width: "50%",
   marginLeft: "10%",
   marginRight: "10%",
