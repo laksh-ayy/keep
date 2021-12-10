@@ -59,7 +59,7 @@ const Dashboard: React.FC<IProp> = ({ isLabel, label, isSearch, search }) => {
   return (
     <>
       <NoteInput />
-      <Grid container spacing={1}>
+      <Grid container spacing={1} data-testid="test">
         {notes.map((note) => (
           <TextBox
             id={note.id}

@@ -15,7 +15,7 @@ const App: React.FC = () => {
     }
   }, []);
   return (
-    <div className="App">
+    <div className="App" data-testid="test">
       <MuiThemeProvider>
         <ToastContainer position="bottom-center" autoClose={3000} />
         <Routes />

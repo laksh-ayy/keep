@@ -59,6 +59,7 @@ export default function SignUp() {
           </Typography>
           <Box
             component="form"
+            data-testid="custom-element"
             onSubmit={handleSubmit}
             noValidate
             sx={{ mt: 1 }}

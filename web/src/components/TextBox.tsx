@@ -118,8 +118,8 @@ const TextBox: React.FC<INote> = ({ id, title, body, label }) => {
 
   return (
     <Grid xs={6} md={4} lg={3} xl={2.4} sm={6}>
-      <Note>
-        <CardActionArea onClick={handleOpen}>
+      <Note data-testid="custom-element">
+        <CardActionArea onClick={handleOpen} data-testid="card">
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {title}
@@ -138,6 +138,7 @@ const TextBox: React.FC<INote> = ({ id, title, body, label }) => {
       <div>
         <Modal
           open={open}
+          data-testid="modal"
           onClose={handleClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
@@ -168,7 +169,7 @@ const TextBox: React.FC<INote> = ({ id, title, body, label }) => {
               <Chip label={label} variant="outlined" sx={{ mb: 1.5 }} />
             )}
             <Buttons>
-              <ClickableIcons onClick={handleOpen2}>
+              <ClickableIcons onClick={handleOpen2} data-testid="edit">
                 <EditIcon sx={{ cursor: "pointer" }} />
               </ClickableIcons>
               <ClickableIcons onClick={handleDelete}>
@@ -180,6 +181,7 @@ const TextBox: React.FC<INote> = ({ id, title, body, label }) => {
               onClose={handleClose2}
               aria-labelledby="modal-modal-title"
               aria-describedby="modal-modal-description"
+              data-testid="modal2"
             >
               <Box sx={style2}>
                 <NoteInputField

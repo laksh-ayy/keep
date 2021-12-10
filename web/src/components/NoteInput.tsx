@@ -53,12 +53,15 @@ const NoteInput = () => {
   };
   return (
     <div>
-      <CreateNote onClick={handleOpen2}>Take a note...</CreateNote>{" "}
+      <CreateNote onClick={handleOpen2} data-testid="takeanote">
+        Take a note...
+      </CreateNote>{" "}
       <Modal
         open={open2}
         onClose={handleClose2}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        data-testid="createanote"
       >
         <Box sx={style2}>
           <NoteInputField

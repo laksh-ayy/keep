@@ -60,6 +60,7 @@ export default function SignIn() {
           </Typography>
           <Box
             component="form"
+            data-testid="custom-element"
             onSubmit={handleSubmit}
             noValidate
             sx={{ mt: 1 }}
@@ -93,9 +94,7 @@ export default function SignIn() {
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
-                {/* <Link>Forgot password?</Link> */}
-              </Grid>
+              <Grid item xs></Grid>
               <Grid item>
                 <Link to="/signup">{"Don't have an account? Sign Up"}</Link>
               </Grid>
